@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5F8F4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Scan Sampah"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="#245D36"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ambil foto sampah untuk mengetahui jenis dan cara pengolahannya."
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"/>
+
+            <ImageView
+                android:id="@+id/imagePreview"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:background="#E3EDE2"
+                android:scaleType="centerCrop"
+                android:contentDescription="Foto sampah"/>
+
+            <TextView
+                android:id="@+id/scanStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Belum ada foto. Silakan ambil gambar sampah."
+                android:textColor="#555555"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"/>
+
+            <Button
+                android:id="@+id/btnTakePhoto"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="📷 Ambil Foto"
+                android:textAllCaps="false"
+                android:backgroundTint="#25895C"/>
+
+            <!-- Pilihan kategori -->
+            <LinearLayout
+                android:id="@+id/categoryContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pilih Jenis Sampah"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:textColor="#245D36"
+                    android:layout_marginBottom="10dp"/>
+
+                <Button
+                    android:id="@+id/btnOrganic"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="🍃 Organik"
+                    android:textAllCaps="false"
+                    android:backgroundTint="#DCEEDB"
+                    android:textColor="#245D36"/>
+
+                <Button
+                    android:id="@+id/btnPlastic"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="♻️ Plastik"
+                    android:textAllCaps="false"
+                    android:backgroundTint="#DCEEDB"
+                    android:textColor="#245D36"/>
+
+                <Button
+                    android:id="@+id/btnPaper"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="📄 Kertas"
+                    android:textAllCaps="false"
+                    android:backgroundTint="#DCEEDB"
+                    android:textColor="#245D36"/>
+
+                <Button
+                    android:id="@+id/btnResidual"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="🗑️ Residu"
+                    android:textAllCaps="false"
+                    android:backgroundTint="#DCEEDB"
+                    android:textColor="#245D36"/>
+
+                <TextView
+                    android:id="@+id/tvWasteResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="15sp"
+                    android:textColor="#245D36"
+                    android:background="#E4F3E5"
+                    android:padding="16dp"
+                    android:layout_marginTop="12dp"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Kembali ke Home"
+                android:textAllCaps="false"
+                android:backgroundTint="#DCEEDB"
+                android:textColor="#245D36"
+                android:layout_marginTop="15dp"/>
+
+        </LinearLayout>
+    </ScrollView>

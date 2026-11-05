@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#F5F8F4">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- HEADER -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/welcomeText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="WELCOME BACK!"
+                            android:textColor="#64816B"
+                            android:textSize="12sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/titleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PilahYuk 🌱"
+                            android:textColor="#216B40"
+                            android:textSize="27sp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/profileIcon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        android:text="👤"
+                        android:textSize="25sp"
+                        android:background="#E0EFDF"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/subtitleText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Let's make our environment cleaner!"
+                    android:textColor="#637568"
+                    android:textSize="14sp"/>
+
+
+                <Button
+                    android:id="@+id/btnLanguage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#DCEEDB"
+                    android:text="🇮🇩 Bahasa Indonesia"
+                    android:textAllCaps="false"
+                    android:textColor="#245D36"/>
+
+
+                <!-- SCAN BANNER -->
+                <LinearLayout
+                    android:id="@+id/scanBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="155dp"
+                    android:layout_marginTop="24dp"
+                    android:background="#216B40"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="18dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="♻️ SMART WASTE"
+                            android:textColor="#D5F1D8"
+                            android:textSize="12sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/scanTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Identify Your Waste"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/scanDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Scan and discover the right category."
+                            android:textColor="#E5F3E6"
+                            android:textSize="12sp"/>
+
+                        <Button
+                            android:id="@+id/btnScan"
+                            android:layout_width="125dp"
+                            android:layout_height="42dp"
+                            android:layout_marginTop="10dp"
+                            android:backgroundTint="#FFFFFF"
+                            android:text="Start Scan"
+                            android:textAllCaps="false"
+                            android:textColor="#216B40"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="📷"
+                        android:textSize="48sp"/>
+                </LinearLayout>
+
+                <!-- SEARCH -->
+                <TextView
+                    android:id="@+id/searchTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:text="Find Your Waste Category"
+                    android:textColor="#244E32"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <EditText
+                    android:id="@+id/searchInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_search"
+                    android:hint="🔍  Search waste items..."
+                    android:inputType="text"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:singleLine="true"
+                    android:textColor="#263D2B"
+                    android:textSize="14sp"/>
+
+                <LinearLayout
+                    android:id="@+id/searchResults"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"/>
+
+                <!-- CATEGORY -->
+                <TextView
+                    android:id="@+id/categoriesTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:text="Waste Categories"
+                    android:textColor="#244E32"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/categoryDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Choose a category to learn more."
+                    android:textColor="#778579"
+                    android:textSize="13sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnOrganic"
+                        android:layout_width="0dp"
+                        android:layout_height="112dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="7dp"
+                        android:backgroundTint="#DCEEDB"
+                        android:text="🍃\nOrganic\nWaste"
+                        android:textAllCaps="false"
+                        android:textColor="#285D35"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+
+                    <Button
+                        android:id="@+id/btnPlastic"
+                        android:layout_width="0dp"
+                        android:layout_height="112dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="7dp"
+                        android:backgroundTint="#DCEBF5"
+                        android:text="♻️\nPlastic\nWaste"
+                        android:textAllCaps="false"
+                        android:textColor="#315A78"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnPaper"
+                        android:layout_width="0dp"
+                        android:layout_height="112dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="7dp"
+                        android:backgroundTint="#F5EACD"
+                        android:text="📄\nPaper\nWaste"
+                        android:textAllCaps="false"
+                        android:textColor="#765A25"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+
+                    <Button
+                        android:id="@+id/btnResidual"
+                        android:layout_width="0dp"
+                        android:layout_height="112dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="7dp"
+                        android:backgroundTint="#E5E9E5"
+                        android:text="🗑️\nResidual\nWaste"
+                        android:textAllCaps="false"
+                        android:textColor="#48534A"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <!-- BANK SAMPAH -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:background="#E4F1E2"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/bankTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Find a Waste Bank Near You"
+                        android:textColor="#245D36"
+                        android:textSize="17sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/bankDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Find nearby recycling and waste collection points."
+                        android:textColor="#5B725F"
+                        android:textSize="13sp"/>
+
+                    <Button
+                        android:id="@+id/btnFindBank"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="12dp"
+                        android:backgroundTint="#246B40"
+                        android:text="📍 Find Nearby Waste Banks"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"/>
+                </LinearLayout>
+
+                <!-- ECO TIP -->
+                <TextView
+                    android:id="@+id/tipTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:text="🌱 Today's Eco Tip"
+                    android:textColor="#245D36"
+                    android:textSize="17sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tipText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#E8F0E6"
+                    android:padding="16dp"
+                    android:text="Clean and dry recyclable items before placing them in the recycling bin."
+                    android:textColor="#46604A"
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- BOTTOM NAVIGATION -->
+        <LinearLayout
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="#FFFFFF"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/navHome"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="⌂\nHome"
+                android:textColor="#21834B"
+                android:textSize="13sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/navScan"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="▣\nScan"
+                android:textColor="#829084"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:id="@+id/navLocation"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="⌖\nLocation"
+                android:textColor="#829084"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:id="@+id/navProfile"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="♙\nProfile"
+                android:textColor="#829084"
+                android:textSize="13sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
