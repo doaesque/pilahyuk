@@ -15,7 +15,7 @@ import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
-    private var isIndonesian = false
+    private var isIndonesian = true
 
     private lateinit var searchInput: EditText
     private lateinit var searchResults: LinearLayout
@@ -99,11 +99,6 @@ class MainActivity : AppCompatActivity() {
             }
         )
 
-        // Tombol bahasa
-        findViewById<Button>(R.id.btnLanguage).setOnClickListener {
-            isIndonesian = !isIndonesian
-            updateLanguage()
-        }
 
         // Kategori sampah
         findViewById<Button>(R.id.btnOrganic).setOnClickListener {
@@ -161,14 +156,22 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, ScanActivity::class.java))
         }
 
-        updateLanguage()
-
-        findViewById<Button>(R.id.btnLanguage).text =
-            if (isIndonesian) "🇬🇧 English"
-            else "🇮🇩 Bahasa Indonesia"
-
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        // Ambil bahasa yang dipilih dari halaman Profil
+        val preferences = getSharedPreferences(
+            "PilahYukSettings",
+            MODE_PRIVATE
+        )
+
+        isIndonesian = preferences.getString("language", "id") == "id"
+
+        // Perbarui seluruh teks Beranda
+        updateLanguage()
+    }
     private fun setupNavigation() {
 
         findViewById<TextView>(R.id.navHome).setOnClickListener {

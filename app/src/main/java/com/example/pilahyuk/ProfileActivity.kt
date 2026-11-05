@@ -12,58 +12,36 @@ class ProfileActivity : AppCompatActivity() {
 
     private var isIndonesian = true
 
+    // Pengaturan bahasa bersama untuk seluruh aplikasi
+    private val preferences by lazy {
+        getSharedPreferences("PilahYukSettings", MODE_PRIVATE)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+
+        // Ambil bahasa yang terakhir dipilih
+        isIndonesian = preferences.getString("language", "id") == "id"
 
         val menuLanguage = findViewById<TextView>(R.id.menuLanguage)
         val menuContact = findViewById<TextView>(R.id.menuContact)
         val menuAbout = findViewById<TextView>(R.id.menuAbout)
         val menuPrivacy = findViewById<TextView>(R.id.menuPrivacy)
 
+        // Tampilkan bahasa sesuai pengaturan tersimpan
+        updateLanguage()
+
         // LANGUAGE
         menuLanguage.setOnClickListener {
             isIndonesian = !isIndonesian
 
-            menuLanguage.text = if (isIndonesian) {
-                "🌐  Bahasa Indonesia"
-            } else {
-                "🌐  English"
-            }
+            // Simpan pilihan bahasa
+            preferences.edit()
+                .putString("language", if (isIndonesian) "id" else "en")
+                .apply()
 
-            findViewById<TextView>(R.id.profileTitle).text =
-                if (isIndonesian) "Profil" else "Profile"
-
-            findViewById<TextView>(R.id.guestTitle).text =
-                if (isIndonesian) "Pengguna Tamu" else "Guest User"
-
-            findViewById<TextView>(R.id.guestDescription).text =
-                if (isIndonesian) {
-                    "Nikmati fitur PilahYuk tanpa perlu membuat akun."
-                } else {
-                    "Enjoy PilahYuk features without creating an account."
-                }
-
-            findViewById<TextView>(R.id.settingsTitle).text =
-                if (isIndonesian) "Pengaturan" else "Settings"
-
-            menuContact.text =
-                if (isIndonesian) "✉️  Hubungi Pengembang"
-                else "✉️  Contact Developer"
-
-            menuAbout.text =
-                if (isIndonesian) "ℹ️  Tentang PilahYuk"
-                else "ℹ️  About PilahYuk"
-
-            menuPrivacy.text =
-                if (isIndonesian) "🔒  Kebijakan Privasi"
-                else "🔒  Privacy Policy"
-
-            findViewById<TextView>(R.id.profileNavLocation).text =
-                if (isIndonesian) "⌖\nLokasi" else "⌖\nLocation"
-
-            findViewById<TextView>(R.id.profileNavProfile).text =
-                if (isIndonesian) "●\nProfil" else "●\nProfile"
+            updateLanguage()
         }
 
         // CONTACT DEVELOPER
@@ -146,5 +124,45 @@ class ProfileActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.profileNavProfile).setOnClickListener {
             // Sudah berada di halaman profil
         }
+    }
+
+    private fun updateLanguage() {
+        findViewById<TextView>(R.id.menuLanguage).text =
+            if (isIndonesian) "🌐  Bahasa Indonesia"
+            else "🌐  English"
+
+        findViewById<TextView>(R.id.profileTitle).text =
+            if (isIndonesian) "Profil" else "Profile"
+
+        findViewById<TextView>(R.id.guestTitle).text =
+            if (isIndonesian) "Pengguna Tamu" else "Guest User"
+
+        findViewById<TextView>(R.id.guestDescription).text =
+            if (isIndonesian) {
+                "Nikmati fitur PilahYuk tanpa perlu membuat akun."
+            } else {
+                "Enjoy PilahYuk features without creating an account."
+            }
+
+        findViewById<TextView>(R.id.settingsTitle).text =
+            if (isIndonesian) "Pengaturan" else "Settings"
+
+        findViewById<TextView>(R.id.menuContact).text =
+            if (isIndonesian) "✉️  Hubungi Pengembang"
+            else "✉️  Contact Developer"
+
+        findViewById<TextView>(R.id.menuAbout).text =
+            if (isIndonesian) "ℹ️  Tentang PilahYuk"
+            else "ℹ️  About PilahYuk"
+
+        findViewById<TextView>(R.id.menuPrivacy).text =
+            if (isIndonesian) "🔒  Kebijakan Privasi"
+            else "🔒  Privacy Policy"
+
+        findViewById<TextView>(R.id.profileNavLocation).text =
+            if (isIndonesian) "⌖\nLokasi" else "⌖\nLocation"
+
+        findViewById<TextView>(R.id.profileNavProfile).text =
+            if (isIndonesian) "●\nProfil" else "●\nProfile"
     }
 }

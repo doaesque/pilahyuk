@@ -68,18 +68,6 @@
                     android:textColor="#637568"
                     android:textSize="14sp"/>
 
-
-                <Button
-                    android:id="@+id/btnLanguage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="8dp"
-                    android:backgroundTint="#DCEEDB"
-                    android:text="🇮🇩 Bahasa Indonesia"
-                    android:textAllCaps="false"
-                    android:textColor="#245D36"/>
-
-
                 <!-- SCAN BANNER -->
                 <LinearLayout
                     android:id="@+id/scanBanner"
