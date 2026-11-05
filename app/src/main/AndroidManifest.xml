@@ -17,6 +17,10 @@
             android:theme="@style/Theme.PilahYuk">
 
             <activity
+                android:name=".ProfileActivity"
+                android:exported="false" />
+
+            <activity
                 android:name=".ScanActivity"
                 android:exported="false" />
 

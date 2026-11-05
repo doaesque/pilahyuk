@@ -188,12 +188,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<TextView>(R.id.navProfile).setOnClickListener {
-            updateNavigation(3)
-            showComingSoon("Profile")
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
         }
 
         findViewById<TextView>(R.id.profileIcon).setOnClickListener {
-            showComingSoon("Profile")
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
         }
     }
 
